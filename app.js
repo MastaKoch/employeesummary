@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { kMaxLength } = require("buffer");
 
 
 // render(employees)
@@ -17,10 +18,85 @@ const render = require("./lib/htmlRenderer");
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 const employee = [
+    // initial question for user 
     {
-        name: "What is your name?",
-        id: "What is your employee ID?",
+        type: "list",
+        name: "position",
+        message: "What is your position?",
+        choices: [
+            "Manager",
+            "Engineer",
+            "Intern",
+            "Roster is complete; I'm done adding employees."
+        ],
+    },
+];
+
+
+const managerQuestions= [
+    // questions for managers
+    {
+        type: "input",
+        name: "id",
+        message: "What is your employee ID?",
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email address?"
+    },
+
+    {
+        type: "input",
+        name: "officenum",
+        message: "What is your office number?",
+    },
+
+];
+
+const engineerQuestions= [
+    // questions for engineers
+    {
+        type: "input",
+        name: "id",
+        message: "What is your employee ID?",
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email address?",
+    },
+
+    {
+        type: "input",
+        name: "github",
+        message: "what is your Github username?"
+    },
+];
+
+const internQuestions= [
+
+    // questions for interns
+    {
+        type: "input",
+        name: "id",
+        message: "What is your employee ID?"
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email address?",
+    },
+
+    {
+        type: "input",
+        name: "school",
+        message: "Where do you attend university?",
     }
+
 ];
 
 // After the user has input all employees desired, call the `render` function (required
