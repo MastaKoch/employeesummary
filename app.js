@@ -126,14 +126,30 @@ const internQuestions= [
 assembleTeam();
 
 function assembleTeam() {
-    inquirer
-        .prompt
-    ([{
-        name: "hello",
-        type: "input",
-        message: "Can you say hello?"
-    }]);
-    console.log(response);
+    inquirer.prompt(employeeQuest)
+        .then(function (response) {
+            console.log(response);
+            return response;
+        })
+        .then (function (response) {
+            if (response.position==="Manager") {
+                inquirer.prompt(managerQuestions).then(response => {
+                    var newManager= new Manager(
+                        response.name,
+                        response.id,
+                        response.email,
+                        response.officeNum
+                        );
+                        employeesArr.push(newManager);
+
+                        console.log("A new manager has been added to your team!");
+                        assembleTeam();  
+                })
+            } 
+               
+        })
+    
+    
 }
 
 // After the user has input all employees desired, call the `render` function (required
