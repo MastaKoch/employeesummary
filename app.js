@@ -16,13 +16,15 @@ const { kMaxLength } = require("buffer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+const employeesArr = [];
 
-const employee = [
+const employeeQuest = [
+
     // initial question for user 
     {
         type: "list",
         name: "position",
-        message: "What is your position?",
+        message: "What is the position of the employee?",
         choices: [
             "Manager",
             "Engineer",
@@ -35,6 +37,14 @@ const employee = [
 
 const managerQuestions= [
     // questions for managers
+
+
+    {
+        type: "input",
+        name: "name",
+        message: "What is the manager's name?",
+    },
+
     {
         type: "input",
         name: "id",
@@ -57,6 +67,13 @@ const managerQuestions= [
 
 const engineerQuestions= [
     // questions for engineers
+
+    {
+        type: "input",
+        name: "name",
+        message: "What is the engineer's name?",
+    },
+
     {
         type: "input",
         name: "id",
@@ -79,6 +96,13 @@ const engineerQuestions= [
 const internQuestions= [
 
     // questions for interns
+
+    {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name?",
+    },
+
     {
         type: "input",
         name: "id",
@@ -98,6 +122,19 @@ const internQuestions= [
     }
 
 ];
+
+assembleTeam();
+
+function assembleTeam() {
+    inquirer
+        .prompt
+    ([{
+        name: "hello",
+        type: "input",
+        message: "Can you say hello?"
+    }]);
+    console.log(response);
+}
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
