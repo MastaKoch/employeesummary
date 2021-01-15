@@ -1,0 +1,17 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.text-center{
+    color: purple;
+}
+
+h2.card-title{
+    color:  #FF9317; 
+    }
+h3.card-title{
+    color: purple;
+}
+.col-12.jumbotron.mb-3.team-heading {
+background-color: #FF9317;
+}

@@ -12,8 +12,6 @@ const render = require("./lib/htmlRenderer");
 const { kMaxLength } = require("buffer");
 
 
-// render(employees)
-
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -79,7 +77,7 @@ const managerQuestions= [
 
     {
         type: "input",
-        name: "officenum",
+        name: "officeNumber",
         message: "What is your office number?",
     },
 
@@ -158,7 +156,7 @@ function assembleTeam() {
                         response.name,
                         response.id,
                         response.email,
-                        response.officeNum
+                        response.officeNumber
                         );
                         employeesArr.push(newManager);
 
