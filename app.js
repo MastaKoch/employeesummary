@@ -197,7 +197,7 @@ function assembleTeam() {
             var main = render(employeesArr);
             fs.writeFile(outputPath, main, (err) => {
                 if (err) throw err;
-                console.log("Your new team has been generated in the team.html file!");
+                console.log("Your new team has been generated! Look in the team.html file of the output folder and open in browser.");
             })
         };
 
